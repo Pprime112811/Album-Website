@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Team Prime | Official Website</title>
+
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      font-family: Arial, Helvetica, sans-serif;
+      background: #08080c;
+      color: white;
+    }
+
+    nav {
+      position: fixed;
+      top: 0;
+      width: 100%;
+      padding: 18px 7%;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      background: rgba(8, 8, 12, 0.85);
+      backdrop-filter: blur(12px);
+      z-index: 1000;
+    }
+
+    .logo {
+      font-size: 24px;
+      font-weight: 900;
+      letter-spacing: 2px;
+    }
+
+    nav a {
+      color: white;
+      text-decoration: none;
+      margin-left: 24px;
+      font-weight: bold;
+    }
+
+    nav a:hover {
+      opacity: 0.65;
+    }
+
+    .hero {
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      padding: 120px 20px 60px;
+      background:
+        radial-gradient(circle at 50% 20%, #303050, transparent 40%),
+        linear-gradient(135deg, #09090d, #151522);
+    }
+
+    .hero h1 {
+      font-size: clamp(60px, 12vw, 150px);
+      font-weight: 900;
+      letter-spacing: -6px;
+    }
+
+    .hero p {
+      margin-top: 15px;
+      font-size: 20px;
+      color: #bdbdc9;
+    }
+
+    .button {
+      display: inline-block;
+      margin-top: 30px;
+      padding: 14px 28px;
+      border-radius: 999px;
+      background: white;
+      color: black;
+      text-decoration: none;
+      font-weight: bold;
+      transition: 0.2s;
+    }
+
+    .button:hover {
+      transform: scale(1.05);
+    }
+
+    section {
+      padding: 100px 7%;
+      max-width: 1200px;
+      margin: auto;
+    }
+
+    .section-title {
+      font-size: 42px;
+      margin-bottom: 40px;
+    }
+
+    .album {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 50px;
+      align-items: center;
+    }
+
+    .album-cover {
+      aspect-ratio: 1;
+      border-radius: 20px;
+      background:
+        linear-gradient(135deg, #536dfe, #9c27b0, #ff4081);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      box-shadow: 0 25px 80px rgba(0,0,0,0.5);
+    }
+
+    .album-cover h3 {
+      font-size: 55px;
+      font-weight: 900;
+    }
+
+    .album-info p {
+      color: #bdbdc9;
+      line-height: 1.7;
+      margin-bottom: 25px;
+    }
+
+    .track {
+      padding: 18px 0;
+      border-bottom: 1px solid #292933;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .track button {
+      border: none;
+      background: white;
+      color: black;
+      border-radius: 50%;
+      width: 42px;
+      height: 42px;
+      cursor: pointer;
+      font-size: 16px;
+    }
+
+    .team-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 18px;
+    }
+
+    .member {
+      padding: 35px 20px;
+      border-radius: 18px;
+      background: #15151d;
+      text-align: center;
+    }
+
+    .member h3 {
+      font-size: 24px;
+      margin-bottom: 8px;
+    }
+
+    .member p {
+      color: #9999a7;
+    }
+
+    .updates {
+      background: #111118;
+      border-radius: 25px;
+      padding: 35px;
+    }
+
+    footer {
+      text-align: center;
+      padding: 50px 20px;
+      color: #777784;
+      border-top: 1px solid #20202a;
+    }
+
+    @media (max-width: 750px) {
+      nav a {
+        display: none;
+      }
+
+      .album {
+        grid-template-columns: 1fr;
+      }
+
+      .team-grid {
+        grid-template-columns: 1fr 1fr;
+      }
+
+      .hero h1 {
+        letter-spacing: -3px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <nav>
+    <div class="logo">TEAM PRIME</div>
+
+    <div>
+      <a href="#home">Home</a>
+      <a href="#music">Music</a>
+      <a href="#team">Team</a>
+      <a href="#updates">Updates</a>
+    </div>
+  </nav>
+
+  <main>
+
+    <section class="hero" id="home">
+      <div>
+        <h1>TEAM PRIME</h1>
+        <p>The official home
