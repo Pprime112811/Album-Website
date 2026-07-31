@@ -2,926 +2,167 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-<title>Team Prime | Official Website</title>
-
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<meta name="theme-color" content="#0b0b14">
+<meta name="description" content="Prime Creator — Team Prime music, projects, creator academy and tools.">
+<link rel="manifest" href="manifest.webmanifest">
+<link rel="apple-touch-icon" href="icon.svg">
+<title>Prime Creator</title>
 <style>
-
-/* =========================
-   BASIC
-========================= */
-
-* {
-    box-sizing: border-box;
-    margin: 0;
-    padding: 0;
-}
-
-html {
-    scroll-behavior: smooth;
-}
-
-body {
-    font-family: Arial, Helvetica, sans-serif;
-    background: #070711;
-    color: white;
-}
-
-/* =========================
-   TEAM PRIME COLORS
-========================= */
-
-:root {
-    --blue: #2495ff;
-    --purple: #a855f7;
-    --orange: #ff8a24;
-    --green: #43e85b;
-}
-
-/* =========================
-   NAVIGATION
-========================= */
-
-nav {
-    position: fixed;
-    top: 0;
-    left: 0;
-    right: 0;
-
-    height: 72px;
-
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-
-    padding: 0 6%;
-
-    background: rgba(7, 7, 17, 0.95);
-
-    border-bottom: 1px solid #252535;
-
-    z-index: 1000;
-}
-
-.logo {
-    font-size: 22px;
-    font-weight: 900;
-    letter-spacing: 2px;
-
-    background: linear-gradient(
-        90deg,
-        var(--blue),
-        var(--purple),
-        var(--orange),
-        var(--green)
-    );
-
-    -webkit-background-clip: text;
-    background-clip: text;
-    color: transparent;
-}
-
-.logo-p {
-    font-size: 38px;
-    font-weight: 1000;
-}
-
-.nav-links {
-    display: flex;
-    gap: 22px;
-}
-
-.nav-links a {
-    color: white;
-    text-decoration: none;
-    font-weight: bold;
-}
-
-.nav-links a:hover {
-    color: var(--purple);
-}
-
-/* =========================
-   HOME
-========================= */
-
-.hero {
-    min-height: 100vh;
-
-    display: flex;
-    justify-content: center;
-    align-items: center;
-
-    text-align: center;
-
-    padding: 120px 20px 70px;
-
-    background:
-        radial-gradient(circle at 15% 20%, #2495ff55, transparent 30%),
-        radial-gradient(circle at 85% 20%, #a855f755, transparent 30%),
-        radial-gradient(circle at 15% 85%, #ff8a2455, transparent 30%),
-        radial-gradient(circle at 85% 85%, #43e85b55, transparent 30%),
-        #070711;
-}
-
-.hero-content {
-    max-width: 1000px;
-}
-
-.big-p {
-    font-size: 150px;
-    font-weight: 1000;
-    line-height: .8;
-    margin-bottom: 30px;
-
-    background: linear-gradient(
-        135deg,
-        var(--blue),
-        var(--purple),
-        var(--orange),
-        var(--green)
-    );
-
-    -webkit-background-clip: text;
-    background-clip: text;
-    color: transparent;
-
-    filter: drop-shadow(0 0 25px #a855f755);
-}
-
-.hero h1 {
-    font-size: clamp(55px, 12vw, 140px);
-    line-height: .9;
-    letter-spacing: -5px;
-    font-weight: 1000;
-
-    background: linear-gradient(
-        90deg,
-        var(--blue),
-        var(--purple),
-        var(--orange),
-        var(--green)
-    );
-
-    -webkit-background-clip: text;
-    background-clip: text;
-    color: transparent;
-}
-
-.hero p {
-    margin-top: 25px;
-    font-size: 21px;
-    color: #c7c7d3;
-}
-
-.button {
-    display: inline-block;
-
-    margin-top: 25px;
-
-    padding: 15px 28px;
-
-    border-radius: 30px;
-
-    background: linear-gradient(
-        90deg,
-        var(--blue),
-        var(--purple),
-        var(--orange),
-        var(--green)
-    );
-
-    color: white;
-    text-decoration: none;
-
-    font-weight: 900;
-
-    transition: .2s;
-}
-
-.button:hover {
-    transform: scale(1.05);
-    box-shadow: 0 0 30px #a855f755;
-}
-
-/* =========================
-   SECTIONS
-========================= */
-
-section {
-    max-width: 1200px;
-    margin: auto;
-    padding: 100px 6%;
-}
-
-.section-title {
-    font-size: clamp(40px, 7vw, 60px);
-    margin-bottom: 40px;
-    font-weight: 1000;
-
-    background: linear-gradient(
-        90deg,
-        var(--blue),
-        var(--purple),
-        var(--orange),
-        var(--green)
-    );
-
-    -webkit-background-clip: text;
-    background-clip: text;
-    color: transparent;
-}
-
-/* =========================
-   ABOUT
-========================= */
-
-.about-box {
-    padding: 40px;
-
-    background: #11111d;
-
-    border-radius: 25px;
-
-    border: 1px solid #29293a;
-
-    line-height: 1.8;
-
-    color: #c9c9d5;
-}
-
-.about-box h3 {
-    color: white;
-    font-size: 28px;
-    margin-bottom: 15px;
-}
-
-.about-box p {
-    margin-bottom: 18px;
-}
-
-/* =========================
-   TEAM
-========================= */
-
-.team-grid {
-    display: grid;
-    grid-template-columns: repeat(4, 1fr);
-    gap: 20px;
-}
-
-.member {
-    padding: 35px 20px;
-
-    text-align: center;
-
-    background: #11111d;
-
-    border: 1px solid #29293a;
-
-    border-radius: 22px;
-
-    transition: .2s;
-}
-
-.member:hover {
-    transform: translateY(-7px);
-}
-
-.member-icon {
-    width: 80px;
-    height: 80px;
-
-    margin: 0 auto 18px;
-
-    display: flex;
-    justify-content: center;
-    align-items: center;
-
-    border-radius: 50%;
-
-    font-size: 32px;
-    font-weight: 1000;
-}
-
-.parker .member-icon {
-    background: var(--blue);
-}
-
-.isla .member-icon {
-    background: var(--purple);
-}
-
-.liam .member-icon {
-    background: var(--orange);
-}
-
-.miles .member-icon {
-    background: var(--green);
-}
-
-.member h3 {
-    margin-bottom: 8px;
-    font-size: 22px;
-}
-
-.member p {
-    color: #9999a8;
-}
-
-/* =========================
-   ALBUM
-========================= */
-
-.album {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 55px;
-    align-items: start;
-}
-
-/* ALBUM COVER */
-
-.album-cover {
-    aspect-ratio: 1;
-
-    display: flex;
-    flex-direction: column;
-
-    align-items: center;
-    justify-content: center;
-
-    text-align: center;
-
-    border-radius: 28px;
-
-    background:
-        radial-gradient(circle at 15% 15%, var(--blue), transparent 35%),
-        radial-gradient(circle at 85% 15%, var(--purple), transparent 35%),
-        radial-gradient(circle at 15% 85%, var(--orange), transparent 35%),
-        radial-gradient(circle at 85% 85%, var(--green), transparent 35%),
-        #11111d;
-
-    box-shadow: 0 25px 70px #00000099;
-}
-
-.album-p {
-    font-size: 145px;
-    line-height: .9;
-    font-weight: 1000;
-
-    background: linear-gradient(
-        135deg,
-        var(--blue),
-        var(--purple),
-        var(--orange),
-        var(--green)
-    );
-
-    -webkit-background-clip: text;
-    background-clip: text;
-    color: transparent;
-}
-
-.album-cover h3 {
-    font-size: 44px;
-    letter-spacing: 4px;
-    margin-top: 10px;
-}
-
-.album-cover p {
-    margin-top: 10px;
-    font-size: 14px;
-    font-weight: bold;
-    letter-spacing: 4px;
-}
-
-/* ALBUM INFO */
-
-.album-description {
-    color: #aaaaba;
-    line-height: 1.7;
-    margin-bottom: 25px;
-}
-
-/* =========================
-   SONGS
-========================= */
-
-.song {
-    background: #11111d;
-
-    border: 1px solid #29293a;
-
-    border-radius: 20px;
-
-    padding: 22px;
-
-    margin-bottom: 18px;
-
-    transition: .2s;
-}
-
-.song:hover {
-    border-color: var(--purple);
-    transform: translateX(4px);
-}
-
-.song-number {
-    color: #777789;
-    margin-right: 6px;
-}
-
-.song h3 {
-    font-size: 20px;
-}
-
-.song .button {
-    margin-top: 15px;
-}
-
-/* =========================
-   VIDEOS
-========================= */
-
-.video-box {
-    padding: 50px;
-
-    text-align: center;
-
-    background: #11111d;
-
-    border: 1px solid #29293a;
-
-    border-radius: 25px;
-}
-
-.video-box h3 {
-    font-size: 30px;
-    margin-bottom: 15px;
-}
-
-.video-box p {
-    color: #aaaaba;
-    line-height: 1.7;
-}
-
-/* =========================
-   FOOTER
-========================= */
-
-footer {
-    padding: 65px 20px;
-
-    text-align: center;
-
-    border-top: 1px solid #252535;
-
-    color: #777789;
-}
-
-.footer-logo {
-    font-size: 30px;
-    font-weight: 1000;
-    margin-bottom: 10px;
-
-    background: linear-gradient(
-        90deg,
-        var(--blue),
-        var(--purple),
-        var(--orange),
-        var(--green)
-    );
-
-    -webkit-background-clip: text;
-    background-clip: text;
-    color: transparent;
-}
-
-/* =========================
-   MOBILE
-========================= */
-
-@media (max-width: 800px) {
-
-    .nav-links {
-        display: none;
-    }
-
-    .album {
-        grid-template-columns: 1fr;
-    }
-
-    .team-grid {
-        grid-template-columns: 1fr 1fr;
-    }
-
-    .big-p {
-        font-size: 110px;
-    }
-}
-
-@media (max-width: 500px) {
-
-    .team-grid {
-        grid-template-columns: 1fr;
-    }
-
-    section {
-        padding: 75px 5%;
-    }
-
-    .about-box {
-        padding: 28px;
-    }
-
-    .album-cover h3 {
-        font-size: 34px;
-    }
-}
-
+:root{--bg:#080810;--panel:#12121d;--panel2:#191927;--text:#fff;--muted:#aaaabd;--line:#2b2b3d;--blue:#2495ff;--purple:#a855f7;--orange:#ff8a24;--green:#43e85b}
+*{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;background:radial-gradient(circle at 20% 0%,#152039 0,#080810 35%),var(--bg);color:var(--text);font-family:Arial,sans-serif;padding-bottom:80px}
+header{position:sticky;top:0;z-index:20;background:rgba(8,8,16,.94);backdrop-filter:blur(14px);border-bottom:1px solid var(--line)}
+.brand{padding:18px 18px 12px;text-align:center;font-weight:900;letter-spacing:2px;font-size:25px}
+.brandline{height:4px;background:linear-gradient(90deg,var(--blue),var(--purple),var(--orange),var(--green))}
+nav{display:flex;gap:8px;overflow-x:auto;padding:10px 12px 13px;scrollbar-width:none}nav::-webkit-scrollbar{display:none}
+nav button,.btn{border:1px solid var(--line);background:var(--panel2);color:#fff;border-radius:999px;padding:10px 14px;font-weight:800;white-space:nowrap;cursor:pointer}nav button.active,nav button:hover,.btn.primary{background:linear-gradient(90deg,#2495ff,#a855f7);border-color:transparent}
+main{max-width:1050px;margin:auto;padding:20px}.page{display:none}.page.active{display:block}.hero{text-align:center;padding:35px 10px 25px}.hero h1{font-size:clamp(38px,8vw,70px);margin:10px 0}.gradient{background:linear-gradient(90deg,var(--blue),var(--purple),var(--orange),var(--green));-webkit-background-clip:text;background-clip:text;color:transparent}.hero p{color:var(--muted);font-size:18px;line-height:1.6}
+.grid{display:grid;grid-template-columns:repeat(2,1fr);gap:16px}.card{background:linear-gradient(145deg,var(--panel),#0e0e18);border:1px solid var(--line);border-radius:22px;padding:20px;box-shadow:0 10px 30px #0003}.card h2,.card h3{margin-top:0}.muted{color:var(--muted);line-height:1.65}
+.row{display:flex;gap:10px;flex-wrap:wrap}.spacer{height:12px}
+input,textarea,select{width:100%;background:#090912;border:1px solid var(--line);border-radius:12px;padding:12px;color:#fff;font:inherit;margin:6px 0 12px}textarea{min-height:120px;resize:vertical}
+.lesson{display:none;margin-top:18px}.lesson.show{display:block}.back{margin-bottom:12px}.song{display:flex;align-items:center;justify-content:space-between;gap:12px;padding:13px 0;border-bottom:1px solid var(--line)}.song:last-child{border-bottom:0}
+.check{display:flex;gap:10px;align-items:center;padding:9px 0}.check input{width:auto;margin:0}.small{font-size:13px;color:var(--muted)}
+.toast{position:fixed;left:50%;bottom:22px;transform:translateX(-50%);background:#222236;border:1px solid #44445a;padding:12px 16px;border-radius:999px;display:none;z-index:50}.toast.show{display:block}
+footer{text-align:center;color:#777;padding:35px 15px}
+@media(max-width:700px){.grid{grid-template-columns:1fr}main{padding:14px}.hero{padding-top:25px}.song{align-items:flex-start;flex-direction:column}}
 </style>
 </head>
-
 <body>
+<header>
+  <div class="brand">PRIME CREATOR</div>
+  <div class="brandline"></div>
+  <nav id="nav">
+    <button data-page="home" class="active">🏠 Home</button>
+    <button data-page="music">🎵 Music</button>
+    <button data-page="team">🎬 Team Prime</button>
+    <button data-page="academy">🚀 Academy</button>
+    <button data-page="tools">🛠️ Tools</button>
+    <button data-page="about">ℹ️ About</button>
+  </nav>
+</header>
 
-
-<!-- =========================
-     NAVIGATION
-========================= -->
-
-<nav>
-
-    <div class="logo">
-        <span class="logo-p">P</span>
-        TEAM PRIME
+<main>
+<section id="home" class="page active">
+  <div class="hero">
+    <div class="small">CREATED BY TEAM PRIME</div>
+    <h1>Create. <span class="gradient">Learn.</span> Improve.</h1>
+    <p>Prime Creator brings Team Prime's music, projects, creator lessons and useful tools together in one place.</p>
+    <div class="row" style="justify-content:center">
+      <button class="btn primary" onclick="go('academy')">Start learning 🚀</button>
+      <button class="btn" onclick="go('tools')">Open creator tools 🛠️</button>
     </div>
-
-    <div class="nav-links">
-        <a href="#home">Home</a>
-        <a href="#about">About Us</a>
-        <a href="#music">Music</a>
-        <a href="#team">Team</a>
-        <a href="#videos">Videos</a>
-    </div>
-
-</nav>
-
-
-<!-- =========================
-     HOME
-========================= -->
-
-<section class="hero" id="home">
-
-    <div class="hero-content">
-
-        <div class="big-p">
-            P
-        </div>
-
-        <h1>
-            TEAM PRIME
-        </h1>
-
-        <p>
-            The official home of Team Prime.
-        </p>
-
-        <a class="button" href="#music">
-            🎵 LISTEN TO MEMORIES
-        </a>
-
-    </div>
-
+  </div>
+  <div class="grid">
+    <div class="card"><h3>🎵 Memories</h3><p class="muted">Explore Parker Pierce's album and music videos.</p><button class="btn" onclick="go('music')">Open Music</button></div>
+    <div class="card"><h3>🎬 Team Prime</h3><p class="muted">Meet the team and explore movies, videos and projects.</p><button class="btn" onclick="go('team')">Explore Team Prime</button></div>
+    <div class="card"><h3>🚀 Creator Academy</h3><p class="muted">Learn practical skills for planning, filming, editing and improving YouTube videos.</p><button class="btn" onclick="go('academy')">Learn</button></div>
+    <div class="card"><h3>🛠️ Creator Tools</h3><p class="muted">Generate ideas, plan videos, check uploads and keep track of goals.</p><button class="btn" onclick="go('tools')">Use Tools</button></div>
+  </div>
 </section>
 
-
-<!-- =========================
-     ABOUT US
-========================= -->
-
-<section id="about">
-
-    <h2 class="section-title">
-        ABOUT US
-    </h2>
-
-    <div class="about-box">
-
-        <h3>
-            Welcome to Team Prime! 🚀
-        </h3>
-
-        <p>
-            Team Prime is a group of friends and family who love
-            creating videos, movies, music, adventures, and
-            memories together.
-        </p>
-
-        <p>
-            Team Prime is all about having fun, being creative,
-            trying new things, and turning ordinary moments into
-            awesome memories.
-        </p>
-
-        <p>
-            From music projects and YouTube videos to mini movies,
-            adventures, and new ideas, there is always something
-            happening with Team Prime.
-        </p>
-
-        <p>
-            This is the official Team Prime website. Here you can
-            find our music, projects, videos, and information
-            about the team.
-        </p>
-
-    </div>
-
+<section id="music" class="page">
+  <h1>🎵 Music</h1>
+  <div class="card">
+    <h2>Memories — Parker Pierce</h2>
+    <p class="muted">The current album collection. The buttons open the videos on YouTube.</p>
+    <div class="song"><div><b>01 — I'm Here With You</b><div class="small">YouTube</div></div><a class="btn primary" href="https://youtube.com/shorts/TS-cJVr-JEs" target="_blank" rel="noopener">▶ Open</a></div>
+    <div class="song"><div><b>02 — Plead The Fifth</b><div class="small">YouTube</div></div><a class="btn primary" href="https://youtu.be/WpjgibK11-Q" target="_blank" rel="noopener">▶ Open</a></div>
+    <div class="song"><div><b>03 — Keep It Moving</b><div class="small">YouTube</div></div><a class="btn primary" href="https://youtube.com/shorts/I2ubh9B9iFY" target="_blank" rel="noopener">▶ Open</a></div>
+    <div class="song"><div><b>04 — Memories</b><div class="small">YouTube</div></div><a class="btn primary" href="https://youtu.be/l-zIsOWj6qY" target="_blank" rel="noopener">▶ Open</a></div>
+  </div>
 </section>
 
-
-<!-- =========================
-     TEAM
-========================= -->
-
-<section id="team">
-
-    <h2 class="section-title">
-        MEET THE TEAM
-    </h2>
-
-    <div class="team-grid">
-
-
-        <div class="member parker">
-
-            <div class="member-icon">
-                P
-            </div>
-
-            <h3>
-                Parker Prime
-            </h3>
-
-            <p>
-                Creator • Music • Movies
-            </p>
-
-        </div>
-
-
-        <div class="member isla">
-
-            <div class="member-icon">
-                I
-            </div>
-
-            <h3>
-                Isla Prime
-            </h3>
-
-            <p>
-                Music • Videos • Team Prime
-            </p>
-
-        </div>
-
-
-        <div class="member liam">
-
-            <div class="member-icon">
-                L
-            </div>
-
-            <h3>
-                Liam Prime
-            </h3>
-
-            <p>
-                Videos • Adventures • Team Prime
-            </p>
-
-        </div>
-
-
-        <div class="member miles">
-
-            <div class="member-icon">
-                M
-            </div>
-
-            <h3>
-                Miles Prime
-            </h3>
-
-            <p>
-                Videos • Adventures • Team Prime
-            </p>
-
-        </div>
-
-
-    </div>
-
+<section id="team" class="page">
+  <h1>🎬 Team Prime</h1>
+  <div class="grid">
+    <div class="card"><h2>🔵 Parker Prime</h2><p class="muted">Music, movies, videos and Team Prime projects.</p></div>
+    <div class="card"><h2>🟣 Isla Prime</h2><p class="muted">Music, videos and Team Prime projects.</p></div>
+    <div class="card"><h2>🟠 Liam Prime</h2><p class="muted">Videos, adventures and Team Prime projects.</p></div>
+    <div class="card"><h2>🟢 Miles Prime</h2><p class="muted">Videos, adventures and Team Prime projects.</p></div>
+  </div>
+  <div class="spacer"></div>
+  <div class="card"><h2>🎥 Projects</h2><p class="muted">This area is ready for Team Prime movies, playlists, photos and future projects.</p></div>
 </section>
 
-
-<!-- =========================
-     MUSIC
-========================= -->
-
-<section id="music">
-
-    <h2 class="section-title">
-        MEMORIES
-    </h2>
-
-    <div class="album">
-
-
-        <!-- ALBUM COVER -->
-
-        <div class="album-cover">
-
-            <div class="album-p">
-                P
-            </div>
-
-            <h3>
-                MEMORIES
-            </h3>
-
-            <p>
-                PARKER PIERCE
-            </p>
-
-        </div>
-
-
-        <!-- SONG LIST -->
-
-        <div>
-
-            <p class="album-description">
-
-                <strong>Memories</strong> is the official album
-                by <strong>Parker Pierce</strong>.
-
-                Listen to all four songs below.
-
-            </p>
-
-
-            <!-- SONG 1 -->
-
-            <div class="song">
-
-                <h3>
-                    <span class="song-number">01 —</span>
-                    I'm Here With You
-                </h3>
-
-                <a
-                    class="button"
-                    href="https://youtu.be/TS-cJVr-JEs"
-                    target="_blank"
-                    rel="noopener noreferrer">
-
-                    ▶ PLAY SONG
-
-                </a>
-
-            </div>
-
-
-            <!-- SONG 2 -->
-
-            <div class="song">
-
-                <h3>
-                    <span class="song-number">02 —</span>
-                    Plead The Fifth
-                </h3>
-
-                <a
-                    class="button"
-                    href="https://youtu.be/WpjgibK11-Q"
-                    target="_blank"
-                    rel="noopener noreferrer">
-
-                    ▶ PLAY SONG
-
-                </a>
-
-            </div>
-
-
-            <!-- SONG 3 -->
-
-            <div class="song">
-
-                <h3>
-                    <span class="song-number">03 —</span>
-                    Keep It Moving
-                </h3>
-
-                <a
-                    class="button"
-                    href="https://youtu.be/I2ubh9B9iFY"
-                    target="_blank"
-                    rel="noopener noreferrer">
-
-                    ▶ PLAY SONG
-
-                </a>
-
-            </div>
-
-
-            <!-- SONG 4 -->
-
-            <div class="song">
-
-                <h3>
-                    <span class="song-number">04 —</span>
-                    Memories
-                </h3>
-
-                <a
-                    class="button"
-                    href="https://youtu.be/l-zIsOWj6qY"
-                    target="_blank"
-                    rel="noopener noreferrer">
-
-                    ▶ PLAY SONG
-
-                </a>
-
-            </div>
-
-
-        </div>
-
-    </div>
-
+<section id="academy" class="page">
+  <h1>🚀 Creator Academy</h1>
+  <p class="muted">Choose a lesson. These focus on skills and sustainable improvement—not guaranteed views or subscribers.</p>
+  <div class="grid" id="lessonGrid"></div>
+  <div id="lessonBox" class="card lesson">
+    <button class="btn back" onclick="closeLesson()">← All lessons</button>
+    <h2 id="lessonTitle"></h2><p id="lessonText" class="muted"></p>
+  </div>
 </section>
 
-
-<!-- =========================
-     VIDEOS
-========================= -->
-
-<section id="videos">
-
-    <h2 class="section-title">
-        TEAM PRIME VIDEOS
-    </h2>
-
-    <div class="video-box">
-
-        <h3>
-            🎬 Team Prime Videos
-        </h3>
-
-        <p>
-            This section is for Team Prime movies, YouTube videos,
-            music videos, and future projects.
-        </p>
-
-        <a class="button" href="#home">
-            ↑ BACK TO TOP
-        </a>
-
+<section id="tools" class="page">
+  <h1>🛠️ Creator Tools</h1>
+  <div class="grid">
+    <div class="card"><h2>💡 Idea Generator</h2><p id="idea" class="muted">Generate a video concept.</p><button class="btn primary" onclick="idea()">Generate</button></div>
+    <div class="card"><h2>🏷️ Title Helper</h2><input id="topic" placeholder="What's your video about?"><button class="btn primary" onclick="titles()">Make title ideas</button><div id="titleOut" class="muted"></div></div>
+    <div class="card"><h2>📝 Video Planner</h2><input id="planTitle" placeholder="Video title"><textarea id="planNotes" placeholder="Beginning, middle, ending, shots, notes..."></textarea><button class="btn primary" onclick="savePlan()">Save plan</button><div id="planStatus" class="small"></div></div>
+    <div class="card"><h2>✅ Upload Checklist</h2>
+      <label class="check"><input type="checkbox" data-check="video"> Video finished</label>
+      <label class="check"><input type="checkbox" data-check="thumbnail"> Thumbnail ready</label>
+      <label class="check"><input type="checkbox" data-check="title"> Title checked</label>
+      <label class="check"><input type="checkbox" data-check="description"> Description ready</label>
+      <label class="check"><input type="checkbox" data-check="watch"> Watched the final version</label>
+      <p id="checkCount" class="small"></p>
     </div>
-
+    <div class="card"><h2>🎯 Creator Goal</h2><input id="goal" placeholder="Example: Finish my next video"><button class="btn primary" onclick="saveGoal()">Save goal</button><p id="goalOut" class="muted"></p></div>
+    <div class="card"><h2>🖼️ Thumbnail Checklist</h2><p class="muted">☐ Clear subject<br>☐ Easy to understand quickly<br>☐ Text readable on a phone<br>☐ Matches the actual video<br>☐ Not overloaded with effects</p></div>
+  </div>
 </section>
 
+<section id="about" class="page">
+  <h1>ℹ️ About</h1>
+  <div class="card">
+    <h2>What is Prime Creator?</h2>
+    <p class="muted">Prime Creator is a Team Prime project designed to put music, videos, projects and creator-learning resources into one app.</p>
+    <p class="muted">The goal is to help creators practice real skills, make better content and build something they are proud of.</p>
+    <button id="installBtn" class="btn primary" style="display:none">📲 Install Prime Creator</button>
+    <p id="installNote" class="small"></p>
+  </div>
+</section>
+</main>
+<footer>PRIME CREATOR • Team Prime • 2026</footer>
+<div id="toast" class="toast"></div>
 
-<!-- =========================
-     FOOTER
-========================= -->
-
-<footer>
-
-    <div class="footer-logo">
-        TEAM PRIME
-    </div>
-
-    <p>
-        The official Team Prime website
-    </p>
-
-    <br>
-
-    <p>
-        © 2026 Team Prime
-    </p>
-
-</footer>
-
-
+<script>
+const lessons={
+videos:["🎥 Making Better Videos","Start with a clear idea and a simple beginning, middle and end. Film what the viewer needs to understand the story, then remove slow or unnecessary parts during editing."],
+ideas:["💡 Finding Video Ideas","Keep a running list of ideas. Look at your hobbies, questions, experiences and things you genuinely enjoy. Try different formats and add your own angle instead of copying someone else's video."],
+thumbnails:["🖼️ Better Thumbnails","Make the main subject obvious at a glance. Keep text short and readable on a phone. The thumbnail should accurately represent the video rather than promising something that is not there."],
+editing:["✂️ Editing","Use cuts to keep the story moving. Remove unnecessary pauses, balance audio, and use effects only when they help the story. Watch the finished video before publishing."],
+sound:["🎵 Music & Sound","Music can change the mood of a scene and sound effects can add emphasis. Keep background music below speech and use audio you have permission to use."],
+growth:["📈 Growing Your Channel","There is no guaranteed shortcut to success. Improve your content, learn what your audience responds to, study your analytics, and experiment with titles, thumbnails and formats."],
+camera:["🎤 Being Comfortable on Camera","Practice speaking naturally. Small mistakes are normal and can often be edited. Focus on communicating clearly instead of trying to be perfect."],
+consistency:["📅 Staying Consistent","Pick a schedule that fits your real life. Consistency means a routine you can maintain—not uploading constantly and burning yourself out."]
+};
+const lessonGrid=document.getElementById("lessonGrid");
+Object.entries(lessons).forEach(([key,[title,text]])=>{
+  const d=document.createElement("div"); d.className="card";
+  d.innerHTML=`<h2>${title}</h2><p class="muted">${text.slice(0,100)}...</p><button class="btn primary">Start Lesson</button>`;
+  d.querySelector("button").onclick=()=>openLesson(key); lessonGrid.appendChild(d);
+});
+function openLesson(k){document.getElementById("lessonTitle").textContent=lessons[k][0];document.getElementById("lessonText").textContent=lessons[k][1];document.getElementById("lessonBox").classList.add("show");document.getElementById("lessonBox").scrollIntoView({behavior:"smooth"});}
+function closeLesson(){document.getElementById("lessonBox").classList.remove("show");}
+function go(id){document.querySelectorAll(".page").forEach(p=>p.classList.remove("active"));document.getElementById(id).classList.add("active");document.querySelectorAll("nav button").forEach(b=>b.classList.toggle("active",b.dataset.page===id));scrollTo({top:0,behavior:"smooth"});}
+document.querySelectorAll("nav button").forEach(b=>b.onclick=()=>go(b.dataset.page));
+const ideas=["Behind the scenes of making a Team Prime project","A mini movie with only two actors","How I made my latest song","A day of creating a YouTube video","Three editing tricks I use","A creator mistake I learned from","Make a video in a completely new style","How I plan a video from idea to upload","A funny story turned into a mini movie","Things I wish I knew when I started YouTube"];
+function idea(){document.getElementById("idea").textContent=ideas[Math.floor(Math.random()*ideas.length)];}
+function titles(){let t=document.getElementById("topic").value.trim()||"my next video";document.getElementById("titleOut").innerHTML=["How I Made "+t,"I Tried "+t+"...","Everything You Need to Know About "+t,"My Honest Experience With "+t].map(x=>"• "+x).join("<br>");}
+function savePlan(){localStorage.setItem("pc_plan",JSON.stringify({title:planTitle.value,notes:planNotes.value}));document.getElementById("planStatus").textContent="Saved on this device.";toast("Plan saved");}
+function saveGoal(){localStorage.setItem("pc_goal",goal.value);goalOut.textContent="Current goal: "+goal.value;toast("Goal saved");}
+function toast(x){const t=document.getElementById("toast");t.textContent=x;t.classList.add("show");setTimeout(()=>t.classList.remove("show"),1600);}
+document.querySelectorAll("[data-check]").forEach(c=>{let k="pc_check_"+c.dataset.check;c.checked=localStorage.getItem(k)==="1";c.onchange=()=>{localStorage.setItem(k,c.checked?"1":"0");updateChecks();};});
+function updateChecks(){let a=[...document.querySelectorAll("[data-check]")],n=a.filter(x=>x.checked).length;document.getElementById("checkCount").textContent=n+" / "+a.length+" complete";}
+updateChecks();
+const oldPlan=JSON.parse(localStorage.getItem("pc_plan")||"null");if(oldPlan){planTitle.value=oldPlan.title||"";planNotes.value=oldPlan.notes||"";}
+const oldGoal=localStorage.getItem("pc_goal");if(oldGoal){goal.value=oldGoal;goalOut.textContent="Current goal: "+oldGoal;}
+let deferredPrompt=null;
+window.addEventListener("beforeinstallprompt",e=>{e.preventDefault();deferredPrompt=e;document.getElementById("installBtn").style.display="inline-block";});
+document.getElementById("installBtn").onclick=async()=>{if(!deferredPrompt)return;deferredPrompt.prompt();await deferredPrompt.userChoice;deferredPrompt=null;};
+if("serviceWorker" in navigator) window.addEventListener("load",()=>navigator.serviceWorker.register("./sw.js").catch(()=>{}));
+</script>
 </body>
 </html>

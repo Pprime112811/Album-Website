@@ -1,0 +1,12 @@
+{
+  "name": "Prime Creator",
+  "short_name": "Prime Creator",
+  "start_url": "./",
+  "display": "standalone",
+  "background_color": "#080810",
+  "theme_color": "#0b0b14",
+  "description": "Team Prime music, projects, creator academy and tools.",
+  "icons": [
+    {"src":"icon.svg","sizes":"any","type":"image/svg+xml","purpose":"any maskable"}
+  ]
+}
