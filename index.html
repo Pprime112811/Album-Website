@@ -7,8 +7,15 @@
 <title>Team Prime | Official Website</title>
 
 <style>
+
+/* =========================
+   BASIC
+========================= */
+
 * {
     box-sizing: border-box;
+    margin: 0;
+    padding: 0;
 }
 
 html {
@@ -16,13 +23,15 @@ html {
 }
 
 body {
-    margin: 0;
-    font-family: Arial, sans-serif;
-    background: #080812;
+    font-family: Arial, Helvetica, sans-serif;
+    background: #070711;
     color: white;
 }
 
-/* COLORS */
+/* =========================
+   TEAM PRIME COLORS
+========================= */
+
 :root {
     --blue: #2495ff;
     --purple: #a855f7;
@@ -30,14 +39,17 @@ body {
     --green: #43e85b;
 }
 
-/* NAVBAR */
+/* =========================
+   NAVIGATION
+========================= */
+
 nav {
     position: fixed;
     top: 0;
     left: 0;
     right: 0;
 
-    height: 70px;
+    height: 72px;
 
     display: flex;
     align-items: center;
@@ -45,14 +57,17 @@ nav {
 
     padding: 0 6%;
 
-    background: rgba(8,8,18,.95);
+    background: rgba(7, 7, 17, 0.95);
 
-    z-index: 100;
+    border-bottom: 1px solid #252535;
+
+    z-index: 1000;
 }
 
 .logo {
     font-size: 22px;
     font-weight: 900;
+    letter-spacing: 2px;
 
     background: linear-gradient(
         90deg,
@@ -63,43 +78,62 @@ nav {
     );
 
     -webkit-background-clip: text;
+    background-clip: text;
     color: transparent;
 }
 
-.logo span {
+.logo-p {
     font-size: 38px;
+    font-weight: 1000;
 }
 
-nav a {
+.nav-links {
+    display: flex;
+    gap: 22px;
+}
+
+.nav-links a {
     color: white;
     text-decoration: none;
-    margin-left: 20px;
     font-weight: bold;
 }
 
-/* HERO */
+.nav-links a:hover {
+    color: var(--purple);
+}
+
+/* =========================
+   HOME
+========================= */
+
 .hero {
     min-height: 100vh;
 
     display: flex;
-    align-items: center;
     justify-content: center;
+    align-items: center;
 
     text-align: center;
 
-    padding: 100px 20px;
+    padding: 120px 20px 70px;
 
     background:
-        radial-gradient(circle at 20% 20%, #2495ff55, transparent 30%),
-        radial-gradient(circle at 80% 20%, #a855f755, transparent 30%),
-        radial-gradient(circle at 20% 80%, #ff8a2455, transparent 30%),
-        radial-gradient(circle at 80% 80%, #43e85b55, transparent 30%),
-        #080812;
+        radial-gradient(circle at 15% 20%, #2495ff55, transparent 30%),
+        radial-gradient(circle at 85% 20%, #a855f755, transparent 30%),
+        radial-gradient(circle at 15% 85%, #ff8a2455, transparent 30%),
+        radial-gradient(circle at 85% 85%, #43e85b55, transparent 30%),
+        #070711;
 }
 
-.hero-p {
-    font-size: 130px;
-    font-weight: 900;
+.hero-content {
+    max-width: 1000px;
+}
+
+.big-p {
+    font-size: 150px;
+    font-weight: 1000;
+    line-height: .8;
+    margin-bottom: 30px;
 
     background: linear-gradient(
         135deg,
@@ -110,14 +144,17 @@ nav a {
     );
 
     -webkit-background-clip: text;
+    background-clip: text;
     color: transparent;
 
-    margin-bottom: 15px;
+    filter: drop-shadow(0 0 25px #a855f755);
 }
 
 .hero h1 {
-    font-size: clamp(55px, 12vw, 130px);
-    margin: 0;
+    font-size: clamp(55px, 12vw, 140px);
+    line-height: .9;
+    letter-spacing: -5px;
+    font-weight: 1000;
 
     background: linear-gradient(
         90deg,
@@ -128,12 +165,14 @@ nav a {
     );
 
     -webkit-background-clip: text;
+    background-clip: text;
     color: transparent;
 }
 
 .hero p {
-    font-size: 20px;
-    color: #ccc;
+    margin-top: 25px;
+    font-size: 21px;
+    color: #c7c7d3;
 }
 
 .button {
@@ -155,18 +194,31 @@ nav a {
 
     color: white;
     text-decoration: none;
-    font-weight: bold;
+
+    font-weight: 900;
+
+    transition: .2s;
 }
 
-/* SECTIONS */
+.button:hover {
+    transform: scale(1.05);
+    box-shadow: 0 0 30px #a855f755;
+}
+
+/* =========================
+   SECTIONS
+========================= */
+
 section {
     max-width: 1200px;
     margin: auto;
     padding: 100px 6%;
 }
 
-.title {
-    font-size: 50px;
+.section-title {
+    font-size: clamp(40px, 7vw, 60px);
+    margin-bottom: 40px;
+    font-weight: 1000;
 
     background: linear-gradient(
         90deg,
@@ -177,80 +229,121 @@ section {
     );
 
     -webkit-background-clip: text;
+    background-clip: text;
     color: transparent;
 }
 
-/* ABOUT */
-.about {
-    padding: 35px;
+/* =========================
+   ABOUT
+========================= */
 
-    background: #12121f;
+.about-box {
+    padding: 40px;
+
+    background: #11111d;
 
     border-radius: 25px;
 
+    border: 1px solid #29293a;
+
     line-height: 1.8;
 
-    color: #ccc;
+    color: #c9c9d5;
 }
 
-/* TEAM */
-.team {
+.about-box h3 {
+    color: white;
+    font-size: 28px;
+    margin-bottom: 15px;
+}
+
+.about-box p {
+    margin-bottom: 18px;
+}
+
+/* =========================
+   TEAM
+========================= */
+
+.team-grid {
     display: grid;
     grid-template-columns: repeat(4, 1fr);
     gap: 20px;
 }
 
 .member {
-    padding: 30px 15px;
+    padding: 35px 20px;
 
     text-align: center;
 
-    background: #12121f;
+    background: #11111d;
 
-    border-radius: 20px;
+    border: 1px solid #29293a;
+
+    border-radius: 22px;
+
+    transition: .2s;
 }
 
-.icon {
-    width: 75px;
-    height: 75px;
+.member:hover {
+    transform: translateY(-7px);
+}
+
+.member-icon {
+    width: 80px;
+    height: 80px;
+
+    margin: 0 auto 18px;
 
     display: flex;
-    align-items: center;
     justify-content: center;
-
-    margin: auto auto 15px;
+    align-items: center;
 
     border-radius: 50%;
 
-    font-size: 30px;
-    font-weight: bold;
+    font-size: 32px;
+    font-weight: 1000;
 }
 
-.parker .icon {
+.parker .member-icon {
     background: var(--blue);
 }
 
-.isla .icon {
+.isla .member-icon {
     background: var(--purple);
 }
 
-.liam .icon {
+.liam .member-icon {
     background: var(--orange);
 }
 
-.miles .icon {
+.miles .member-icon {
     background: var(--green);
 }
 
-/* ALBUM */
+.member h3 {
+    margin-bottom: 8px;
+    font-size: 22px;
+}
+
+.member p {
+    color: #9999a8;
+}
+
+/* =========================
+   ALBUM
+========================= */
+
 .album {
     display: grid;
     grid-template-columns: 1fr 1fr;
-    gap: 50px;
+    gap: 55px;
+    align-items: start;
 }
 
-/* COVER */
-.cover {
+/* ALBUM COVER */
+
+.album-cover {
     aspect-ratio: 1;
 
     display: flex;
@@ -261,7 +354,7 @@ section {
 
     text-align: center;
 
-    border-radius: 25px;
+    border-radius: 28px;
 
     background:
         radial-gradient(circle at 15% 15%, var(--blue), transparent 35%),
@@ -269,11 +362,14 @@ section {
         radial-gradient(circle at 15% 85%, var(--orange), transparent 35%),
         radial-gradient(circle at 85% 85%, var(--green), transparent 35%),
         #11111d;
+
+    box-shadow: 0 25px 70px #00000099;
 }
 
-.cover-p {
-    font-size: 140px;
-    font-weight: 900;
+.album-p {
+    font-size: 145px;
+    line-height: .9;
+    font-weight: 1000;
 
     background: linear-gradient(
         135deg,
@@ -284,107 +380,187 @@ section {
     );
 
     -webkit-background-clip: text;
+    background-clip: text;
     color: transparent;
 }
 
-.cover h3 {
-    font-size: 42px;
-    margin: 0;
+.album-cover h3 {
+    font-size: 44px;
+    letter-spacing: 4px;
+    margin-top: 10px;
 }
 
-.cover p {
-    letter-spacing: 3px;
+.album-cover p {
+    margin-top: 10px;
+    font-size: 14px;
+    font-weight: bold;
+    letter-spacing: 4px;
 }
 
-/* SONGS */
+/* ALBUM INFO */
+
+.album-description {
+    color: #aaaaba;
+    line-height: 1.7;
+    margin-bottom: 25px;
+}
+
+/* =========================
+   SONGS
+========================= */
+
 .song {
-    background: #12121f;
+    background: #11111d;
 
-    padding: 20px;
+    border: 1px solid #29293a;
 
-    border-radius: 18px;
+    border-radius: 20px;
 
-    margin-bottom: 20px;
+    padding: 22px;
+
+    margin-bottom: 18px;
+
+    transition: .2s;
+}
+
+.song:hover {
+    border-color: var(--purple);
+    transform: translateX(4px);
+}
+
+.song-number {
+    color: #777789;
+    margin-right: 6px;
 }
 
 .song h3 {
-    margin-top: 0;
+    font-size: 20px;
 }
 
-iframe {
-    width: 100%;
-    height: 180px;
-
-    border: 0;
-
-    border-radius: 12px;
+.song .button {
+    margin-top: 15px;
 }
 
-/* VIDEOS */
-.videos {
-    background: #12121f;
+/* =========================
+   VIDEOS
+========================= */
 
-    padding: 40px;
+.video-box {
+    padding: 50px;
+
+    text-align: center;
+
+    background: #11111d;
+
+    border: 1px solid #29293a;
 
     border-radius: 25px;
-
-    text-align: center;
 }
 
-/* FOOTER */
+.video-box h3 {
+    font-size: 30px;
+    margin-bottom: 15px;
+}
+
+.video-box p {
+    color: #aaaaba;
+    line-height: 1.7;
+}
+
+/* =========================
+   FOOTER
+========================= */
+
 footer {
-    padding: 60px 20px;
+    padding: 65px 20px;
 
     text-align: center;
 
-    color: #888;
+    border-top: 1px solid #252535;
 
-    border-top: 1px solid #222;
+    color: #777789;
 }
 
-/* MOBILE */
-@media(max-width: 800px) {
+.footer-logo {
+    font-size: 30px;
+    font-weight: 1000;
+    margin-bottom: 10px;
 
-    nav a {
+    background: linear-gradient(
+        90deg,
+        var(--blue),
+        var(--purple),
+        var(--orange),
+        var(--green)
+    );
+
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+}
+
+/* =========================
+   MOBILE
+========================= */
+
+@media (max-width: 800px) {
+
+    .nav-links {
         display: none;
-    }
-
-    .team {
-        grid-template-columns: 1fr 1fr;
     }
 
     .album {
         grid-template-columns: 1fr;
     }
+
+    .team-grid {
+        grid-template-columns: 1fr 1fr;
+    }
+
+    .big-p {
+        font-size: 110px;
+    }
 }
 
-@media(max-width: 500px) {
+@media (max-width: 500px) {
 
-    .team {
+    .team-grid {
         grid-template-columns: 1fr;
     }
 
     section {
-        padding: 70px 5%;
+        padding: 75px 5%;
+    }
+
+    .about-box {
+        padding: 28px;
+    }
+
+    .album-cover h3 {
+        font-size: 34px;
     }
 }
+
 </style>
 </head>
 
-
 <body>
 
-<!-- NAVIGATION -->
+
+<!-- =========================
+     NAVIGATION
+========================= -->
 
 <nav>
 
     <div class="logo">
-        <span>P</span> TEAM PRIME
+        <span class="logo-p">P</span>
+        TEAM PRIME
     </div>
 
-    <div>
+    <div class="nav-links">
         <a href="#home">Home</a>
-        <a href="#about">About</a>
+        <a href="#about">About Us</a>
         <a href="#music">Music</a>
         <a href="#team">Team</a>
         <a href="#videos">Videos</a>
@@ -393,13 +569,15 @@ footer {
 </nav>
 
 
-<!-- HOME -->
+<!-- =========================
+     HOME
+========================= -->
 
 <section class="hero" id="home">
 
-    <div>
+    <div class="hero-content">
 
-        <div class="hero-p">
+        <div class="big-p">
             P
         </div>
 
@@ -420,19 +598,21 @@ footer {
 </section>
 
 
-<!-- ABOUT -->
+<!-- =========================
+     ABOUT US
+========================= -->
 
 <section id="about">
 
-    <h2 class="title">
-        ABOUT TEAM PRIME
+    <h2 class="section-title">
+        ABOUT US
     </h2>
 
-    <div class="about">
+    <div class="about-box">
 
-        <h2>
+        <h3>
             Welcome to Team Prime! 🚀
-        </h2>
+        </h3>
 
         <p>
             Team Prime is a group of friends and family who love
@@ -441,20 +621,21 @@ footer {
         </p>
 
         <p>
-            Team Prime is about being creative, having fun,
-            trying new things, and turning ordinary moments
-            into awesome memories.
+            Team Prime is all about having fun, being creative,
+            trying new things, and turning ordinary moments into
+            awesome memories.
         </p>
 
         <p>
-            From music projects and YouTube videos to mini movies
-            and new adventures, there is always something happening.
+            From music projects and YouTube videos to mini movies,
+            adventures, and new ideas, there is always something
+            happening with Team Prime.
         </p>
 
         <p>
-            This is the official Team Prime website.
-            Here you can find our music, projects, videos,
-            and information about the team.
+            This is the official Team Prime website. Here you can
+            find our music, projects, videos, and information
+            about the team.
         </p>
 
     </div>
@@ -462,20 +643,22 @@ footer {
 </section>
 
 
-<!-- TEAM -->
+<!-- =========================
+     TEAM
+========================= -->
 
 <section id="team">
 
-    <h2 class="title">
+    <h2 class="section-title">
         MEET THE TEAM
     </h2>
 
-    <div class="team">
+    <div class="team-grid">
 
 
         <div class="member parker">
 
-            <div class="icon">
+            <div class="member-icon">
                 P
             </div>
 
@@ -492,7 +675,7 @@ footer {
 
         <div class="member isla">
 
-            <div class="icon">
+            <div class="member-icon">
                 I
             </div>
 
@@ -509,7 +692,7 @@ footer {
 
         <div class="member liam">
 
-            <div class="icon">
+            <div class="member-icon">
                 L
             </div>
 
@@ -526,7 +709,7 @@ footer {
 
         <div class="member miles">
 
-            <div class="icon">
+            <div class="member-icon">
                 M
             </div>
 
@@ -540,27 +723,30 @@ footer {
 
         </div>
 
+
     </div>
 
 </section>
 
 
-<!-- MUSIC -->
+<!-- =========================
+     MUSIC
+========================= -->
 
 <section id="music">
 
-    <h2 class="title">
+    <h2 class="section-title">
         MEMORIES
     </h2>
 
     <div class="album">
 
 
-        <!-- COVER -->
+        <!-- ALBUM COVER -->
 
-        <div class="cover">
+        <div class="album-cover">
 
-            <div class="cover-p">
+            <div class="album-p">
                 P
             </div>
 
@@ -575,14 +761,17 @@ footer {
         </div>
 
 
-        <!-- SONGS -->
+        <!-- SONG LIST -->
 
         <div>
 
-            <p style="color:#aaa; line-height:1.7;">
+            <p class="album-description">
+
                 <strong>Memories</strong> is the official album
                 by <strong>Parker Pierce</strong>.
+
                 Listen to all four songs below.
+
             </p>
 
 
@@ -591,14 +780,19 @@ footer {
             <div class="song">
 
                 <h3>
-                    01 — I'm Here With You
+                    <span class="song-number">01 —</span>
+                    I'm Here With You
                 </h3>
 
-                <iframe
-                    src="https://www.youtube.com/embed/TS-cJVr-JEs"
-                    title="I'm Here With You"
-                    allowfullscreen>
-                </iframe>
+                <a
+                    class="button"
+                    href="https://youtu.be/TS-cJVr-JEs"
+                    target="_blank"
+                    rel="noopener noreferrer">
+
+                    ▶ PLAY SONG
+
+                </a>
 
             </div>
 
@@ -608,14 +802,19 @@ footer {
             <div class="song">
 
                 <h3>
-                    02 — Plead The Fifth
+                    <span class="song-number">02 —</span>
+                    Plead The Fifth
                 </h3>
 
-                <iframe
-                    src="https://www.youtube.com/embed/WpjgibK11-Q"
-                    title="Plead The Fifth"
-                    allowfullscreen>
-                </iframe>
+                <a
+                    class="button"
+                    href="https://youtu.be/WpjgibK11-Q"
+                    target="_blank"
+                    rel="noopener noreferrer">
+
+                    ▶ PLAY SONG
+
+                </a>
 
             </div>
 
@@ -625,14 +824,19 @@ footer {
             <div class="song">
 
                 <h3>
-                    03 — Keep It Moving
+                    <span class="song-number">03 —</span>
+                    Keep It Moving
                 </h3>
 
-                <iframe
-                    src="https://www.youtube.com/embed/I2ubh9B9iFY"
-                    title="Keep It Moving"
-                    allowfullscreen>
-                </iframe>
+                <a
+                    class="button"
+                    href="https://youtu.be/I2ubh9B9iFY"
+                    target="_blank"
+                    rel="noopener noreferrer">
+
+                    ▶ PLAY SONG
+
+                </a>
 
             </div>
 
@@ -642,16 +846,22 @@ footer {
             <div class="song">
 
                 <h3>
-                    04 — Memories
+                    <span class="song-number">04 —</span>
+                    Memories
                 </h3>
 
-                <iframe
-                    src="https://www.youtube.com/embed/l-zIsOWj6qY"
-                    title="Memories"
-                    allowfullscreen>
-                </iframe>
+                <a
+                    class="button"
+                    href="https://youtu.be/l-zIsOWj6qY"
+                    target="_blank"
+                    rel="noopener noreferrer">
+
+                    ▶ PLAY SONG
+
+                </a>
 
             </div>
+
 
         </div>
 
@@ -660,23 +870,25 @@ footer {
 </section>
 
 
-<!-- VIDEOS -->
+<!-- =========================
+     VIDEOS
+========================= -->
 
 <section id="videos">
 
-    <h2 class="title">
+    <h2 class="section-title">
         TEAM PRIME VIDEOS
     </h2>
 
-    <div class="videos">
+    <div class="video-box">
 
-        <h2>
+        <h3>
             🎬 Team Prime Videos
-        </h2>
+        </h3>
 
         <p>
-            Team Prime movies, music videos, YouTube videos,
-            and new projects will be featured here.
+            This section is for Team Prime movies, YouTube videos,
+            music videos, and future projects.
         </p>
 
         <a class="button" href="#home">
@@ -688,23 +900,28 @@ footer {
 </section>
 
 
-<!-- FOOTER -->
+<!-- =========================
+     FOOTER
+========================= -->
 
 <footer>
 
-    <h2>
+    <div class="footer-logo">
         TEAM PRIME
-    </h2>
+    </div>
 
     <p>
         The official Team Prime website
     </p>
+
+    <br>
 
     <p>
         © 2026 Team Prime
     </p>
 
 </footer>
+
 
 </body>
 </html>
