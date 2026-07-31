@@ -8,10 +8,18 @@
   "description": "Team Prime music, projects, creator academy and tools.",
 "icons": [
   {
+    "src": "teamprime-icon-192.png",
+    "sizes": "192x192",
+    "type": "image/png",
+    "purpose": "any"
+  },
+  {
     "src": "teamprime-icon.png",
     "sizes": "512x512",
     "type": "image/png",
     "purpose": "any maskable"
+  }
+]
   }
 ]
   ]
