@@ -1,15 +1,710 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-    <title>Team Prime Test</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Team Prime | Official Website</title>
+
+<style>
+* {
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background: #080812;
+    color: white;
+}
+
+/* COLORS */
+:root {
+    --blue: #2495ff;
+    --purple: #a855f7;
+    --orange: #ff8a24;
+    --green: #43e85b;
+}
+
+/* NAVBAR */
+nav {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+
+    height: 70px;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    padding: 0 6%;
+
+    background: rgba(8,8,18,.95);
+
+    z-index: 100;
+}
+
+.logo {
+    font-size: 22px;
+    font-weight: 900;
+
+    background: linear-gradient(
+        90deg,
+        var(--blue),
+        var(--purple),
+        var(--orange),
+        var(--green)
+    );
+
+    -webkit-background-clip: text;
+    color: transparent;
+}
+
+.logo span {
+    font-size: 38px;
+}
+
+nav a {
+    color: white;
+    text-decoration: none;
+    margin-left: 20px;
+    font-weight: bold;
+}
+
+/* HERO */
+.hero {
+    min-height: 100vh;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    text-align: center;
+
+    padding: 100px 20px;
+
+    background:
+        radial-gradient(circle at 20% 20%, #2495ff55, transparent 30%),
+        radial-gradient(circle at 80% 20%, #a855f755, transparent 30%),
+        radial-gradient(circle at 20% 80%, #ff8a2455, transparent 30%),
+        radial-gradient(circle at 80% 80%, #43e85b55, transparent 30%),
+        #080812;
+}
+
+.hero-p {
+    font-size: 130px;
+    font-weight: 900;
+
+    background: linear-gradient(
+        135deg,
+        var(--blue),
+        var(--purple),
+        var(--orange),
+        var(--green)
+    );
+
+    -webkit-background-clip: text;
+    color: transparent;
+
+    margin-bottom: 15px;
+}
+
+.hero h1 {
+    font-size: clamp(55px, 12vw, 130px);
+    margin: 0;
+
+    background: linear-gradient(
+        90deg,
+        var(--blue),
+        var(--purple),
+        var(--orange),
+        var(--green)
+    );
+
+    -webkit-background-clip: text;
+    color: transparent;
+}
+
+.hero p {
+    font-size: 20px;
+    color: #ccc;
+}
+
+.button {
+    display: inline-block;
+
+    margin-top: 25px;
+
+    padding: 15px 28px;
+
+    border-radius: 30px;
+
+    background: linear-gradient(
+        90deg,
+        var(--blue),
+        var(--purple),
+        var(--orange),
+        var(--green)
+    );
+
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+/* SECTIONS */
+section {
+    max-width: 1200px;
+    margin: auto;
+    padding: 100px 6%;
+}
+
+.title {
+    font-size: 50px;
+
+    background: linear-gradient(
+        90deg,
+        var(--blue),
+        var(--purple),
+        var(--orange),
+        var(--green)
+    );
+
+    -webkit-background-clip: text;
+    color: transparent;
+}
+
+/* ABOUT */
+.about {
+    padding: 35px;
+
+    background: #12121f;
+
+    border-radius: 25px;
+
+    line-height: 1.8;
+
+    color: #ccc;
+}
+
+/* TEAM */
+.team {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 20px;
+}
+
+.member {
+    padding: 30px 15px;
+
+    text-align: center;
+
+    background: #12121f;
+
+    border-radius: 20px;
+}
+
+.icon {
+    width: 75px;
+    height: 75px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    margin: auto auto 15px;
+
+    border-radius: 50%;
+
+    font-size: 30px;
+    font-weight: bold;
+}
+
+.parker .icon {
+    background: var(--blue);
+}
+
+.isla .icon {
+    background: var(--purple);
+}
+
+.liam .icon {
+    background: var(--orange);
+}
+
+.miles .icon {
+    background: var(--green);
+}
+
+/* ALBUM */
+.album {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 50px;
+}
+
+/* COVER */
+.cover {
+    aspect-ratio: 1;
+
+    display: flex;
+    flex-direction: column;
+
+    align-items: center;
+    justify-content: center;
+
+    text-align: center;
+
+    border-radius: 25px;
+
+    background:
+        radial-gradient(circle at 15% 15%, var(--blue), transparent 35%),
+        radial-gradient(circle at 85% 15%, var(--purple), transparent 35%),
+        radial-gradient(circle at 15% 85%, var(--orange), transparent 35%),
+        radial-gradient(circle at 85% 85%, var(--green), transparent 35%),
+        #11111d;
+}
+
+.cover-p {
+    font-size: 140px;
+    font-weight: 900;
+
+    background: linear-gradient(
+        135deg,
+        var(--blue),
+        var(--purple),
+        var(--orange),
+        var(--green)
+    );
+
+    -webkit-background-clip: text;
+    color: transparent;
+}
+
+.cover h3 {
+    font-size: 42px;
+    margin: 0;
+}
+
+.cover p {
+    letter-spacing: 3px;
+}
+
+/* SONGS */
+.song {
+    background: #12121f;
+
+    padding: 20px;
+
+    border-radius: 18px;
+
+    margin-bottom: 20px;
+}
+
+.song h3 {
+    margin-top: 0;
+}
+
+iframe {
+    width: 100%;
+    height: 180px;
+
+    border: 0;
+
+    border-radius: 12px;
+}
+
+/* VIDEOS */
+.videos {
+    background: #12121f;
+
+    padding: 40px;
+
+    border-radius: 25px;
+
+    text-align: center;
+}
+
+/* FOOTER */
+footer {
+    padding: 60px 20px;
+
+    text-align: center;
+
+    color: #888;
+
+    border-top: 1px solid #222;
+}
+
+/* MOBILE */
+@media(max-width: 800px) {
+
+    nav a {
+        display: none;
+    }
+
+    .team {
+        grid-template-columns: 1fr 1fr;
+    }
+
+    .album {
+        grid-template-columns: 1fr;
+    }
+}
+
+@media(max-width: 500px) {
+
+    .team {
+        grid-template-columns: 1fr;
+    }
+
+    section {
+        padding: 70px 5%;
+    }
+}
+</style>
 </head>
 
-<body style="background: white; color: black; font-family: Arial, sans-serif; padding: 50px;">
 
-    <h1>TEAM PRIME WEBSITE TEST 🚀</h1>
+<body>
 
-    <p>If you can see this, GitHub Pages is working correctly!</p>
+<!-- NAVIGATION -->
+
+<nav>
+
+    <div class="logo">
+        <span>P</span> TEAM PRIME
+    </div>
+
+    <div>
+        <a href="#home">Home</a>
+        <a href="#about">About</a>
+        <a href="#music">Music</a>
+        <a href="#team">Team</a>
+        <a href="#videos">Videos</a>
+    </div>
+
+</nav>
+
+
+<!-- HOME -->
+
+<section class="hero" id="home">
+
+    <div>
+
+        <div class="hero-p">
+            P
+        </div>
+
+        <h1>
+            TEAM PRIME
+        </h1>
+
+        <p>
+            The official home of Team Prime.
+        </p>
+
+        <a class="button" href="#music">
+            🎵 LISTEN TO MEMORIES
+        </a>
+
+    </div>
+
+</section>
+
+
+<!-- ABOUT -->
+
+<section id="about">
+
+    <h2 class="title">
+        ABOUT TEAM PRIME
+    </h2>
+
+    <div class="about">
+
+        <h2>
+            Welcome to Team Prime! 🚀
+        </h2>
+
+        <p>
+            Team Prime is a group of friends and family who love
+            creating videos, movies, music, adventures, and
+            memories together.
+        </p>
+
+        <p>
+            Team Prime is about being creative, having fun,
+            trying new things, and turning ordinary moments
+            into awesome memories.
+        </p>
+
+        <p>
+            From music projects and YouTube videos to mini movies
+            and new adventures, there is always something happening.
+        </p>
+
+        <p>
+            This is the official Team Prime website.
+            Here you can find our music, projects, videos,
+            and information about the team.
+        </p>
+
+    </div>
+
+</section>
+
+
+<!-- TEAM -->
+
+<section id="team">
+
+    <h2 class="title">
+        MEET THE TEAM
+    </h2>
+
+    <div class="team">
+
+
+        <div class="member parker">
+
+            <div class="icon">
+                P
+            </div>
+
+            <h3>
+                Parker Prime
+            </h3>
+
+            <p>
+                Creator • Music • Movies
+            </p>
+
+        </div>
+
+
+        <div class="member isla">
+
+            <div class="icon">
+                I
+            </div>
+
+            <h3>
+                Isla Prime
+            </h3>
+
+            <p>
+                Music • Videos • Team Prime
+            </p>
+
+        </div>
+
+
+        <div class="member liam">
+
+            <div class="icon">
+                L
+            </div>
+
+            <h3>
+                Liam Prime
+            </h3>
+
+            <p>
+                Videos • Adventures • Team Prime
+            </p>
+
+        </div>
+
+
+        <div class="member miles">
+
+            <div class="icon">
+                M
+            </div>
+
+            <h3>
+                Miles Prime
+            </h3>
+
+            <p>
+                Videos • Adventures • Team Prime
+            </p>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- MUSIC -->
+
+<section id="music">
+
+    <h2 class="title">
+        MEMORIES
+    </h2>
+
+    <div class="album">
+
+
+        <!-- COVER -->
+
+        <div class="cover">
+
+            <div class="cover-p">
+                P
+            </div>
+
+            <h3>
+                MEMORIES
+            </h3>
+
+            <p>
+                PARKER PIERCE
+            </p>
+
+        </div>
+
+
+        <!-- SONGS -->
+
+        <div>
+
+            <p style="color:#aaa; line-height:1.7;">
+                <strong>Memories</strong> is the official album
+                by <strong>Parker Pierce</strong>.
+                Listen to all four songs below.
+            </p>
+
+
+            <!-- SONG 1 -->
+
+            <div class="song">
+
+                <h3>
+                    01 — I'm Here With You
+                </h3>
+
+                <iframe
+                    src="https://www.youtube.com/embed/TS-cJVr-JEs"
+                    title="I'm Here With You"
+                    allowfullscreen>
+                </iframe>
+
+            </div>
+
+
+            <!-- SONG 2 -->
+
+            <div class="song">
+
+                <h3>
+                    02 — Plead The Fifth
+                </h3>
+
+                <iframe
+                    src="https://www.youtube.com/embed/WpjgibK11-Q"
+                    title="Plead The Fifth"
+                    allowfullscreen>
+                </iframe>
+
+            </div>
+
+
+            <!-- SONG 3 -->
+
+            <div class="song">
+
+                <h3>
+                    03 — Keep It Moving
+                </h3>
+
+                <iframe
+                    src="https://www.youtube.com/embed/I2ubh9B9iFY"
+                    title="Keep It Moving"
+                    allowfullscreen>
+                </iframe>
+
+            </div>
+
+
+            <!-- SONG 4 -->
+
+            <div class="song">
+
+                <h3>
+                    04 — Memories
+                </h3>
+
+                <iframe
+                    src="https://www.youtube.com/embed/l-zIsOWj6qY"
+                    title="Memories"
+                    allowfullscreen>
+                </iframe>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- VIDEOS -->
+
+<section id="videos">
+
+    <h2 class="title">
+        TEAM PRIME VIDEOS
+    </h2>
+
+    <div class="videos">
+
+        <h2>
+            🎬 Team Prime Videos
+        </h2>
+
+        <p>
+            Team Prime movies, music videos, YouTube videos,
+            and new projects will be featured here.
+        </p>
+
+        <a class="button" href="#home">
+            ↑ BACK TO TOP
+        </a>
+
+    </div>
+
+</section>
+
+
+<!-- FOOTER -->
+
+<footer>
+
+    <h2>
+        TEAM PRIME
+    </h2>
+
+    <p>
+        The official Team Prime website
+    </p>
+
+    <p>
+        © 2026 Team Prime
+    </p>
+
+</footer>
 
 </body>
 </html>
-       
